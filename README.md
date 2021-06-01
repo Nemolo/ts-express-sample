@@ -1,6 +1,6 @@
 # Steps
 
-- preliminar analysis
+- preliminary analysis
 - git init / git clone
 - readme + gitignore
 - npm init
