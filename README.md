@@ -7,8 +7,4 @@
 - setup docker
 - add dependencies
 - draft structure
-- code
-
-- commit
-- commit
-- commit
+- implement business logic
