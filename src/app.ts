@@ -1,7 +1,8 @@
-import { json } from 'body-parser';
 import { config } from 'dotenv';
 config();
+require('express-async-errors');
 import express, { Request, Response } from 'express';
+import { json } from 'body-parser';
 import { authRouter } from './controllers/auth.controller';
 import { privateRouter } from './controllers/private.controller';
 import { redis } from './data/dao';
@@ -30,6 +31,21 @@ app.get('/', async (req: Request, res: Response) => {
 
 app.use('/auth', authRouter);
 app.use('/private', privateRouter);
+
+app.use(async (req: Request, res: Response) => {
+  res.status(404).json({
+    message: 'Endpoint not found'
+  })
+});
+
+app.use(async (err: any, req: Request, res: Response, next: Function) => {
+  if(err) {
+    res.status(500).json({
+      message: "Ooops, something went wrong",
+      detail: err?.message || err
+    })
+  }
+});
 
 app.listen(port, () => {
   console.log(`listening to port ${port}`);
