@@ -1,0 +1,19 @@
+{
+  "name": "ts-express-sample",
+  "version": "1.0.0",
+  "description": "A small project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nemolo/ts-express-sample.git"
+  },
+  "author": "Me @ Jef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nemolo/ts-express-sample/issues"
+  },
+  "homepage": "https://github.com/Nemolo/ts-express-sample#readme"
+}

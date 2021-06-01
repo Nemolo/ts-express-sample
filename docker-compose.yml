@@ -1,0 +1,15 @@
+version: "3.1"
+
+volumes:
+  ts-express-sample-redis-volume-2:
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: ts-express-sample-redis-2
+    ports:
+      - "6379:6379"
+    volumes:
+      - ts-express-sample-redis-volume-2:/var/lib/redis
+    environment:
+      - REDIS_REPLICATION_MODE=master
