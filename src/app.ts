@@ -29,9 +29,11 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/data', dataRouter);
 
+//catch all route, not found
 app.use(async (req: Request, res: Response) => {
   return res.status(404).send();
 })
+
 //error handling
 app.use(async (err: any, req: Request, res: Response, next: Function) => {
   if (err) {
