@@ -1,0 +1,3 @@
+# Steps
+
+- init git
