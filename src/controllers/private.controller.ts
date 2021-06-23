@@ -1,6 +1,8 @@
 import { Request, Response, Router } from 'express';
 import { getUsernameFromToken } from '../data/access.dao';
-import { userRouter } from './private/user.controller';
+import { bigliettoController } from './private/biglietto.controller';
+import { userController } from './private/user.controller';
+
 
 const router = Router();
 
@@ -24,7 +26,8 @@ router.use(async (req: Request, res: Response, next: Function) => {
   return next(undefined, req);
 });
 
-router.use(userRouter);
+router.use(userController);
+router.use(bigliettoController);
 
 router.get('/data', async (req: Request, res: Response) => {
   //TODO private business logic
